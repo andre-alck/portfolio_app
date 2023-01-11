@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio_app/home_screen.dart';
+import 'package:portfolio_app/screens/home_screen.dart';
 
 class PortfolioApp extends StatelessWidget {
   const PortfolioApp({super.key});
