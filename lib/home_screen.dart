@@ -5,5 +5,14 @@ class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
-  Widget build(BuildContext context) => const Scaffold(body: WhoAmIWidget());
+  Widget build(BuildContext context) => Scaffold(
+      body: Container(
+          height: MediaQuery.of(context).size.height,
+          width: MediaQuery.of(context).size.width,
+          decoration: const BoxDecoration(
+              gradient: LinearGradient(
+                  colors: [Color.fromARGB(255, 25, 1, 133), Colors.black],
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter)),
+          child: const WhoAmIWidget()));
 }
