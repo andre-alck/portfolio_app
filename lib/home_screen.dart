@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio_app/tech_stack_widget.dart';
 import 'package:portfolio_app/who_am_i_widget.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -14,5 +15,8 @@ class HomeScreen extends StatelessWidget {
                   colors: [Color.fromARGB(255, 25, 1, 133), Colors.black],
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter)),
-          child: const WhoAmIWidget()));
+          child: Column(children: const [
+            WhoAmIWidget(),
+            Expanded(child: TechStackWidget())
+          ])));
 }
