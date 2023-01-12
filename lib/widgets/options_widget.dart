@@ -5,32 +5,68 @@ class OptionsWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(children: [
-      Row(children: [
-        Container(
-            decoration: const BoxDecoration(
-                border: Border(
-                    right: BorderSide(width: 2, color: Colors.black),
-                    bottom: BorderSide(width: 2, color: Colors.black))),
-            padding: const EdgeInsets.all(20),
-            child: const Text('sobre')),
-        Container(
-            decoration: const BoxDecoration(
-                border:
-                    Border(bottom: BorderSide(width: 2, color: Colors.black))),
-            padding: const EdgeInsets.all(20),
-            child: const Text('porfólio'))
-      ]),
-      Row(children: [
-        Container(
-            decoration: const BoxDecoration(
-                border:
-                    Border(right: BorderSide(width: 2, color: Colors.black))),
-            padding: const EdgeInsets.all(20),
-            child: const Text('resumo')),
-        Container(
-            padding: const EdgeInsets.all(20), child: const Text('contato'))
-      ])
-    ]);
+    return Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Row(children: [
+            Container(
+                width: 100,
+                height: 100,
+                decoration: const BoxDecoration(
+                    border: Border(
+                        right: BorderSide(width: 2, color: Colors.white),
+                        bottom: BorderSide(width: 2, color: Colors.white))),
+                child: Center(
+                    child: RichText(
+                        text: const TextSpan(
+                            text: 'sobre',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 20,
+                                fontFamily: "Regular"))))),
+            Container(
+                width: 100,
+                height: 100,
+                decoration: const BoxDecoration(
+                    border: Border(
+                        bottom: BorderSide(width: 2, color: Colors.white))),
+                child: Center(
+                    child: RichText(
+                        text: const TextSpan(
+                            text: 'portfólio',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 20,
+                                fontFamily: "Regular")))))
+          ]),
+          Row(children: [
+            Container(
+                width: 100,
+                height: 100,
+                decoration: const BoxDecoration(
+                    border: Border(
+                        right: BorderSide(width: 2, color: Colors.white))),
+                child: Center(
+                    child: RichText(
+                        text: const TextSpan(
+                            text: 'portfólio',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 20,
+                                fontFamily: "Regular"))))),
+            SizedBox(
+                width: 100,
+                height: 100,
+                child: Center(
+                    child: RichText(
+                        text: const TextSpan(
+                            text: 'portfólio',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 20,
+                                fontFamily: "Regular")))))
+          ])
+        ]);
   }
 }
