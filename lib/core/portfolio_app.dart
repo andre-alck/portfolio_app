@@ -5,5 +5,6 @@ class PortfolioApp extends StatelessWidget {
   const PortfolioApp({super.key});
 
   @override
-  Widget build(BuildContext context) => const MaterialApp(home: HomeScreen());
+  Widget build(BuildContext context) =>
+      const MaterialApp(home: HomeScreen(), debugShowCheckedModeBanner: false);
 }

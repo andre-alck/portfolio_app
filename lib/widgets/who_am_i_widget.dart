@@ -7,11 +7,11 @@ class WhoAmIWidget extends StatelessWidget {
   Widget build(BuildContext context) => Column(children: <Widget>[
         const CircleAvatar(
             backgroundColor: Colors.white,
-            radius: 105,
+            radius: 80,
             child: CircleAvatar(
                 backgroundImage:
                     AssetImage("assets/images/profile_picture.jpg"),
-                radius: 100)),
+                radius: 77)),
         const SizedBox(height: 16),
         RichText(
             text: const TextSpan(
