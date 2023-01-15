@@ -6,51 +6,32 @@ class TechStackWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     const String prefix = "assets/images";
-    return ListView(scrollDirection: Axis.horizontal, children: <Widget>[
-      Padding(
-          padding: const EdgeInsets.only(right: 25),
-          child: Image.asset("$prefix/flutter_tech_stack_image.png")),
-      Padding(
-          padding: const EdgeInsets.only(right: 25),
-          child: Image.asset("$prefix/dart_tech_stack_image.png")),
-      Padding(
-          padding: const EdgeInsets.only(right: 25),
-          child: Image.asset("$prefix/java_tech_stack_image.png")),
-      Padding(
-          padding: const EdgeInsets.only(right: 25),
-          child: Image.asset("$prefix/spring_boot_tech_stack_image.png")),
-      Padding(
-          padding: const EdgeInsets.only(right: 25),
-          child: Image.asset("$prefix/mysql_tech_stack_image.png")),
-      Padding(
-          padding: const EdgeInsets.only(right: 25),
-          child: Image.asset("$prefix/git_tech_stack_image.png")),
-      Padding(
-          padding: const EdgeInsets.only(right: 25),
-          child: Image.asset("$prefix/github_tech_stack_image.png")),
-      Padding(
-          padding: const EdgeInsets.only(right: 25),
-          child: Image.asset("$prefix/rabbitmq_tech_stack_image.png")),
-      Padding(
-          padding: const EdgeInsets.only(right: 25),
-          child: Image.asset("$prefix/android_tech_stack_image.png")),
-      Padding(
-          padding: const EdgeInsets.only(right: 25),
-          child: Image.asset("$prefix/ios_tech_stack_image.png")),
-      Padding(
-          padding: const EdgeInsets.only(right: 25),
-          child: Image.asset("$prefix/firebase_tech_stack_image.png")),
-      Padding(
-          padding: const EdgeInsets.only(right: 25),
-          child: Image.asset("$prefix/postman_tech_stack_image.png")),
-      Padding(
-          padding: const EdgeInsets.only(right: 25),
-          child: Image.asset("$prefix/insomnia_tech_stack_image.png")),
-      Padding(
-          padding: const EdgeInsets.only(right: 25),
-          child: Image.asset(
-            "$prefix/visual_studio_code_tech_stack_image.png",
-          ))
-    ]);
+    const List<String> imagesPaths = [
+      "$prefix/flutter_tech_stack_image.png",
+      "$prefix/dart_tech_stack_image.png",
+      "$prefix/java_tech_stack_image.png",
+      "$prefix/spring_boot_tech_stack_image.png",
+      "$prefix/mysql_tech_stack_image.png",
+      "$prefix/git_tech_stack_image.png",
+      "$prefix/github_tech_stack_image.png",
+      "$prefix/rabbitmq_tech_stack_image.png",
+      "$prefix/android_tech_stack_image.png",
+      "$prefix/ios_tech_stack_image.png",
+      "$prefix/firebase_tech_stack_image.png",
+      "$prefix/postman_tech_stack_image.png",
+      "$prefix/insomnia_tech_stack_image.png",
+      "$prefix/visual_studio_code_tech_stack_image.png",
+    ];
+
+    return ListView.builder(
+      itemBuilder: (context, index) {
+        return Padding(
+          padding: const EdgeInsets.only(right: 15),
+          child: Image.asset(imagesPaths[index]),
+        );
+      },
+      scrollDirection: Axis.horizontal,
+      itemCount: imagesPaths.length,
+    );
   }
 }
