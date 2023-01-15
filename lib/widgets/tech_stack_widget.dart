@@ -20,18 +20,16 @@ class TechStackWidget extends StatelessWidget {
       "$prefix/firebase_tech_stack_image.png",
       "$prefix/postman_tech_stack_image.png",
       "$prefix/insomnia_tech_stack_image.png",
-      "$prefix/visual_studio_code_tech_stack_image.png",
+      "$prefix/visual_studio_code_tech_stack_image.png"
     ];
 
     return ListView.builder(
-      itemBuilder: (context, index) {
-        return Padding(
-          padding: const EdgeInsets.only(right: 15),
-          child: Image.asset(imagesPaths[index]),
-        );
-      },
-      scrollDirection: Axis.horizontal,
-      itemCount: imagesPaths.length,
-    );
+        itemBuilder: (context, index) {
+          return Padding(
+              padding: const EdgeInsets.only(right: 15),
+              child: Image.asset(imagesPaths[index]));
+        },
+        scrollDirection: Axis.horizontal,
+        itemCount: imagesPaths.length);
   }
 }
