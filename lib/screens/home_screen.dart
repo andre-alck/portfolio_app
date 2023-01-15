@@ -24,7 +24,7 @@ class HomeScreen extends StatelessWidget {
             const Padding(
                 padding: EdgeInsets.only(bottom: 71), child: OptionsWidget()),
             Padding(
-              padding: const EdgeInsets.only(bottom: 8),
+              padding: const EdgeInsets.only(bottom: 25),
               child: RichText(
                   text: const TextSpan(
                       text: '</tech_stack>',
