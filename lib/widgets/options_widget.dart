@@ -15,7 +15,7 @@ class OptionsWidget extends StatelessWidget {
         OptionsSection(
             message: 'portfólio',
             sideBorder:
-                Border(bottom: BorderSide(width: 1, color: Colors.white))),
+                Border(bottom: BorderSide(width: 1, color: Colors.white)))
       ]),
       Row(mainAxisAlignment: MainAxisAlignment.center, children: const [
         OptionsSection(
