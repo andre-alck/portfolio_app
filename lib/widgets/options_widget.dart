@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio_app/screens/contacts_screen.dart';
+import 'package:portfolio_app/screens/sobre_screen.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class OptionsWidget extends StatelessWidget {
   const OptionsWidget({super.key});
@@ -6,23 +9,38 @@ class OptionsWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(children: [
-      Row(mainAxisAlignment: MainAxisAlignment.center, children: const [
-        OptionsSection(
-            message: 'sobre',
-            sideBorder: Border(
-                right: BorderSide(width: 1, color: Colors.white),
-                bottom: BorderSide(width: 1, color: Colors.white))),
-        OptionsSection(
-            message: 'portfólio',
-            sideBorder:
-                Border(bottom: BorderSide(width: 1, color: Colors.white)))
+      Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+        GestureDetector(
+          onTap: () => Navigator.push(context,
+              MaterialPageRoute(builder: (context) => const SobreScreen())),
+          child: const OptionsSection(
+              message: 'sobre',
+              sideBorder: Border(
+                  right: BorderSide(width: 1, color: Colors.white),
+                  bottom: BorderSide(width: 1, color: Colors.white))),
+        ),
+        GestureDetector(
+            onTap: () {
+              final Uri url =
+                  Uri.parse('https://github.com/andre-alck?tab=repositories');
+              launchUrl(url, mode: LaunchMode.inAppWebView);
+            },
+            child: const OptionsSection(
+                message: 'portfólio',
+                sideBorder:
+                    Border(bottom: BorderSide(width: 1, color: Colors.white))))
       ]),
-      Row(mainAxisAlignment: MainAxisAlignment.center, children: const [
-        OptionsSection(
+      Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+        const OptionsSection(
             message: 'resumo',
             sideBorder:
                 Border(right: BorderSide(width: 1, color: Colors.white))),
-        OptionsSection(message: 'contato')
+        GestureDetector(
+            onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const ContactsScreen())),
+            child: const OptionsSection(message: 'contato'))
       ])
     ]);
   }
