@@ -42,7 +42,7 @@ class ContactsScreen extends StatelessWidget {
                                 valueToSubtractWidth: 250,
                                 valueToSubtractHeight: 100,
                                 assetPath: "whatsapp_contactscreen_image.png",
-                                scale: 60))),
+                                scale: 10))),
                     GestureDetector(
                         onTap: () {
                           final Uri url = Uri.parse(
