@@ -21,7 +21,7 @@ class ContactsScreen extends StatelessWidget {
             const Padding(
                 padding: EdgeInsets.only(top: 75, bottom: 50),
                 child: Message(message: 'entre em contato!')),
-            const Message(message: 'André Santos Alckmin de Carvalho!'),
+            const Message(message: 'André Santos Alckmin de Carvalho'),
             Column(children: <Widget>[
               Row(
                   mainAxisAlignment: MainAxisAlignment.center,

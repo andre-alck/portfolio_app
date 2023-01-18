@@ -12,17 +12,20 @@ class _SobreScreenState extends State<SobreScreen> {
   final Info _infoFatec = Info(
       description:
           'Cursei Análise e Desenvolvimento de Sistemas durante 4 semestres na Fatec Itu e estou finalizando o curso no Cruzeiro do Sul Virtual.\nFui Bolsista de Iniciação, sendo responsável por pesquisar, estudar e descrever os métodos e algoritmos de reconhecimento facial Viola-Jones e Convolutional Neural Networks, bem como desenvolver seus códigos de implementação em linguagem Python.',
-      imagePath: 'assets/images/fatec_sobrescreen_image.png');
+      imagePath: 'assets/images/fatec_sobrescreen_image.png',
+      id: 1);
 
   final Info _infoIfsp = Info(
       description:
           'Cursei Automação Industrial no Instituto Federal de Educação, Ciência e Tecnologia de São Paulo, Campus Salto.',
-      imagePath: 'assets/images/ifsp_sobrescreen_image.png');
+      imagePath: 'assets/images/ifsp_sobrescreen_image.png',
+      id: 2);
 
   final Info _infoAutoGeral = Info(
       description:
           'Trabalho como Estagiário em Desenvolvimento na Empresa Auto Geral Autopeças LTDA., onde fui designado a desenvolver uma aplicação responsável pelo gerenciamento de estoque da empresa.\nPara desenvolver a solução, utilizo Flutter, Dart, SpringBoot, Java, MySQL, Git e GitHub.\nPossuo experiência com levantamento e análise de requisitos, validação com stakeholders, documentação técnica e de utilização das funcionalidades dos sistemas e metodologia ágil Kanban.',
-      imagePath: 'assets/images/autogeral_sobrescreen_image.jpg');
+      imagePath: 'assets/images/autogeral_sobrescreen_image.jpg',
+      id: 3);
 
   late final List<Info> _infos = [_infoFatec, _infoIfsp, _infoAutoGeral];
 
@@ -39,37 +42,47 @@ class _SobreScreenState extends State<SobreScreen> {
                     begin: Alignment.topCenter,
                     end: Alignment.bottomCenter)),
             child: SingleChildScrollView(
-                child: ExpansionPanelList(
-                    expansionCallback: (int index, bool isExpanded) {
-                      setState(() => _infos[index].isExpanded = !isExpanded);
-                    },
-                    children: _infos
-                        .map<ExpansionPanel>((Info info) => ExpansionPanel(
-                            backgroundColor: Colors.transparent,
-                            canTapOnHeader: true,
-                            headerBuilder: (BuildContext context, bool isExpanded) => ListTile(
-                                title:
-                                    Image.asset(info.imagePath, height: 100)),
-                            body: ListTile(
-                                title: RichText(
-                                    text: TextSpan(
-                                        text: info.description,
-                                        style: const TextStyle(
-                                            color: Colors.white,
-                                            fontSize: 20,
-                                            fontFamily: "Regular")))),
-                            isExpanded: info.isExpanded))
-                        .toList()))));
+                child: Column(children: [
+              const SizedBox(height: 75),
+              RichText(
+                  text: const TextSpan(
+                      text: 'clique para saber mais!',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                          fontFamily: "Regular"))),
+              const SizedBox(height: 50),
+              ExpansionPanelList.radio(
+                  expandedHeaderPadding: EdgeInsets.only(top: 50, bottom: 50),
+                  children: _infos
+                      .map<ExpansionPanelRadio>(
+                          (Info info) => ExpansionPanelRadio(
+                                value: info.id,
+                                backgroundColor: Colors.transparent,
+                                canTapOnHeader: true,
+                                headerBuilder:
+                                    (BuildContext context, bool isExpanded) =>
+                                        ListTile(
+                                            title: Image.asset(info.imagePath,
+                                                height: 100)),
+                                body: ListTile(
+                                    title: RichText(
+                                        text: TextSpan(
+                                            text: info.description,
+                                            style: const TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 20,
+                                                fontFamily: "Regular")))),
+                              ))
+                      .toList())
+            ]))));
   }
 }
 
 class Info {
   final String description;
   final String imagePath;
-  bool isExpanded;
+  final int id;
 
-  Info(
-      {required this.description,
-      required this.imagePath,
-      this.isExpanded = false});
+  Info({required this.description, required this.imagePath, required this.id});
 }
