@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio_app/core/appbar_widget.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class ContactsScreen extends StatelessWidget {
@@ -6,12 +7,7 @@ class ContactsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Scaffold(
-      appBar: AppBar(
-          backgroundColor: const Color.fromARGB(255, 3, 4, 54),
-          leading: IconButton(
-              icon: const Icon(Icons.arrow_back),
-              onPressed: () => Navigator.pop(context)),
-          title: const Text('menu')),
+      appBar: const AppBarWidget(),
       body: Container(
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height,

@@ -1,16 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio_app/core/appbar_widget.dart';
 
 class SobreScreen extends StatelessWidget {
   const SobreScreen({super.key});
 
   @override
   Widget build(BuildContext context) => Scaffold(
-      appBar: AppBar(
-          backgroundColor: const Color.fromARGB(255, 3, 4, 54),
-          leading: IconButton(
-              icon: const Icon(Icons.arrow_back),
-              onPressed: () => Navigator.pop(context)),
-          title: const Text('menu')),
+      appBar: const AppBarWidget(),
       body: Container(
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height,
@@ -44,7 +40,7 @@ class SobreScreen extends StatelessWidget {
               const SingleTile(
                   description:
                       'Trabalho como Estagiário em Desenvolvimento na Empresa Auto Geral Autopeças LTDA., onde fui designado a desenvolver uma aplicação responsável pelo gerenciamento de estoque da empresa.\nPara desenvolver a solução, utilizo Flutter, Dart, SpringBoot, Java, MySQL, Git e GitHub.\nPossuo experiência com levantamento e análise de requisitos, validação com stakeholders, documentação técnica e de utilização das funcionalidades dos sistemas e metodologia ágil Kanban.',
-                  imageName: "autogeral_sobrescreen_image.jpg"),
+                  imageName: "autogeral_sobrescreen_image.jpg")
             ]),
           )));
 }
