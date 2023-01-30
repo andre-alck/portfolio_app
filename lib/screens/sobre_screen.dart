@@ -53,7 +53,8 @@ class _SobreScreenState extends State<SobreScreen> {
                           fontFamily: "Regular"))),
               const SizedBox(height: 50),
               ExpansionPanelList.radio(
-                  expandedHeaderPadding: EdgeInsets.only(top: 50, bottom: 50),
+                  expandedHeaderPadding:
+                      const EdgeInsets.only(top: 50, bottom: 50),
                   children: _infos
                       .map<ExpansionPanelRadio>(
                           (Info info) => ExpansionPanelRadio(
