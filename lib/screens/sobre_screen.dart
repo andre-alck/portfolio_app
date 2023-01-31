@@ -64,6 +64,8 @@ class _SobreScreenState extends State<SobreScreen> {
                                 headerBuilder:
                                     (BuildContext context, bool isExpanded) =>
                                         ListTile(
+                                            contentPadding:
+                                                const EdgeInsets.all(25),
                                             title: Image.asset(info.imagePath,
                                                 height: 100)),
                                 body: ListTile(
