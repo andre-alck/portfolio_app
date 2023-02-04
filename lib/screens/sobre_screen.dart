@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio_app/core/appbar_widget.dart';
 
 class SobreScreen extends StatefulWidget {
@@ -44,13 +45,12 @@ class _SobreScreenState extends State<SobreScreen> {
             child: SingleChildScrollView(
                 child: Column(children: [
               const SizedBox(height: 75),
-              RichText(
-                  text: const TextSpan(
-                      text: 'clique para saber mais!',
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 20,
-                          fontFamily: "Regular"))),
+              Text('clique para saber mais!',
+                  style: GoogleFonts.nunito(
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                    fontSize: 20,
+                  )),
               const SizedBox(height: 50),
               ExpansionPanelList.radio(
                   animationDuration: const Duration(seconds: 1),
@@ -70,13 +70,10 @@ class _SobreScreenState extends State<SobreScreen> {
                                             title: Image.asset(info.imagePath,
                                                 height: 100)),
                                 body: ListTile(
-                                    title: RichText(
-                                        text: TextSpan(
-                                            text: info.description,
-                                            style: const TextStyle(
-                                                color: Colors.white,
-                                                fontSize: 20,
-                                                fontFamily: "Regular")))),
+                                    title: Text(info.description,
+                                        style: GoogleFonts.nunito(
+                                            color: Colors.white,
+                                            fontSize: 20))),
                               ))
                       .toList())
             ]))));

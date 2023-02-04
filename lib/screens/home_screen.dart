@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio_app/widgets/options_widget.dart';
 import 'package:portfolio_app/widgets/tech_stack_widget.dart';
 import 'package:portfolio_app/widgets/who_am_i_widget.dart';
@@ -19,20 +20,19 @@ class HomeScreen extends StatelessWidget {
           child: SingleChildScrollView(
               child: Column(children: [
             const Padding(
-                padding: EdgeInsets.only(top: 100, bottom: 71),
+                padding: EdgeInsets.only(top: 100, bottom: 25),
                 child: WhoAmIWidget()),
-            const Padding(
-                padding: EdgeInsets.only(bottom: 71), child: OptionsWidget()),
+            const OptionsWidget(),
             Padding(
-              padding: const EdgeInsets.only(bottom: 25),
-              child: RichText(
-                  text: const TextSpan(
-                      text: '</tech_stack>',
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 24,
-                          fontFamily: "Regular"))),
-            ),
+                padding: const EdgeInsets.only(top: 25, bottom: 25),
+                child: Text(
+                  '</tech_stack>',
+                  style: GoogleFonts.nunito(
+                    color: Colors.white,
+                    fontStyle: FontStyle.italic,
+                    fontSize: 24,
+                  ),
+                )),
             const SizedBox(height: 44, child: TechStackWidget())
           ]))));
 }

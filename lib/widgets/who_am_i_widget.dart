@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class WhoAmIWidget extends StatelessWidget {
   const WhoAmIWidget({super.key});
@@ -13,16 +14,13 @@ class WhoAmIWidget extends StatelessWidget {
                     AssetImage("assets/images/profile_picture.jpg"),
                 radius: 77)),
         const SizedBox(height: 16),
-        RichText(
-            text: const TextSpan(
-                text: "André Carvalho",
-                style: TextStyle(
-                    color: Colors.white, fontSize: 30, fontFamily: "Regular"))),
+        Text('André Carvalho',
+            style: GoogleFonts.nunito(
+                color: Colors.white,
+                fontSize: 30,
+                fontWeight: FontWeight.bold)),
         const SizedBox(height: 8),
-        RichText(
-            text: const TextSpan(
-                text: "desenvolvedor mobile",
-                style: TextStyle(
-                    color: Colors.white, fontSize: 24, fontFamily: "Regular")))
+        Text('desenvolvedor mobile',
+            style: GoogleFonts.nunito(color: Colors.white, fontSize: 24)),
       ]);
 }

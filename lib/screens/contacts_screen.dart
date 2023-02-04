@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio_app/core/appbar_widget.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -18,11 +19,13 @@ class ContactsScreen extends StatelessWidget {
                   end: Alignment.bottomCenter)),
           child: SingleChildScrollView(
               child: Column(children: [
-            const Padding(
-                padding: EdgeInsets.only(top: 75, bottom: 50),
-                child: Message(message: 'entre em contato!')),
-            const Center(
-                child: Message(message: 'André Santos Alckmin de Carvalho')),
+            Padding(
+                padding: const EdgeInsets.only(top: 75, bottom: 50),
+                child: Message(
+                  message: 'entre em contato!',
+                  fontWeight: FontWeight.bold,
+                )),
+            Center(child: Message(message: 'André Santos Alckmin de Carvalho')),
             Column(children: <Widget>[
               Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -87,15 +90,16 @@ class ContactsScreen extends StatelessWidget {
 
 class Message extends StatelessWidget {
   final String message;
-  const Message({Key? key, required this.message}) : super(key: key);
+  FontWeight? fontWeight;
+  Message({Key? key, required this.message, this.fontWeight}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return RichText(
-        text: TextSpan(
-            text: message,
-            style: const TextStyle(
-                color: Colors.white, fontSize: 20, fontFamily: "Regular")));
+    return Text(message,
+        style: GoogleFonts.nunito(
+            color: Colors.white,
+            fontSize: 20,
+            fontWeight: fontWeight != null ? FontWeight.bold : null));
   }
 }
 

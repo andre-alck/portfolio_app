@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio_app/screens/contacts_screen.dart';
 import 'package:portfolio_app/screens/sobre_screen.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -52,12 +53,10 @@ class OptionsSection extends StatelessWidget {
         height: 100,
         decoration: BoxDecoration(border: sideBorder),
         child: Center(
-            child: RichText(
-                text: TextSpan(
-                    text: message,
-                    style: const TextStyle(
-                        color: Colors.white,
-                        fontSize: 16,
-                        fontFamily: "Regular")))));
+            child: Text(message,
+                style: GoogleFonts.nunito(
+                  color: Colors.white,
+                  fontSize: 16,
+                ))));
   }
 }
