@@ -21,7 +21,8 @@ class ContactsScreen extends StatelessWidget {
             const Padding(
                 padding: EdgeInsets.only(top: 75, bottom: 50),
                 child: Message(message: 'entre em contato!')),
-            const Message(message: 'André Santos Alckmin de Carvalho'),
+            const Center(
+                child: Message(message: 'André Santos Alckmin de Carvalho')),
             Column(children: <Widget>[
               Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -35,8 +36,8 @@ class ContactsScreen extends StatelessWidget {
                               launchUrl(url);
                             },
                             child: const ImageSpace(
-                                valueToSubtractWidth: 250,
-                                valueToSubtractHeight: 100,
+                                valueToSubtractWidth: 2,
+                                valueToSubtractHeight: 2,
                                 assetPath: "whatsapp_contactscreen_image.png",
                                 scale: 10))),
                     GestureDetector(
@@ -46,8 +47,8 @@ class ContactsScreen extends StatelessWidget {
                           launchUrl(url, mode: LaunchMode.inAppWebView);
                         },
                         child: const ImageSpace(
-                            valueToSubtractWidth: 325,
-                            valueToSubtractHeight: 100,
+                            valueToSubtractWidth: 3,
+                            valueToSubtractHeight: 2,
                             assetPath: "linkedin_contactscreen_image.png",
                             scale: 10.0))
                   ]),
@@ -64,8 +65,8 @@ class ContactsScreen extends StatelessWidget {
                               launchUrl(url);
                             },
                             child: const ImageSpace(
-                                valueToSubtractWidth: 250,
-                                valueToSubtractHeight: 300,
+                                valueToSubtractWidth: 2,
+                                valueToSubtractHeight: 6,
                                 assetPath: "gmail_contactscreen_image.png",
                                 scale: 10.0))),
                     GestureDetector(
@@ -75,8 +76,8 @@ class ContactsScreen extends StatelessWidget {
                           launchUrl(url, mode: LaunchMode.inAppWebView);
                         },
                         child: const ImageSpace(
-                            valueToSubtractWidth: 325,
-                            valueToSubtractHeight: 300,
+                            valueToSubtractWidth: 3,
+                            valueToSubtractHeight: 6,
                             assetPath: "linktree_contactscreen_image.png",
                             scale: 8.0))
                   ])
@@ -115,8 +116,8 @@ class ImageSpace extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        width: MediaQuery.of(context).size.width - valueToSubtractWidth,
-        height: MediaQuery.of(context).size.width - valueToSubtractHeight,
+        width: MediaQuery.of(context).size.width / valueToSubtractWidth,
+        height: MediaQuery.of(context).size.height / valueToSubtractHeight,
         decoration:
             BoxDecoration(border: Border.all(color: Colors.white, width: 1)),
         child: Image.asset("assets/images/$assetPath", scale: scale));
