@@ -24,11 +24,9 @@ class TechStackWidget extends StatelessWidget {
     ];
 
     return ListView.builder(
-        itemBuilder: (context, index) {
-          return Padding(
-              padding: const EdgeInsets.only(right: 15),
-              child: Image.asset(imagesPaths[index]));
-        },
+        itemBuilder: (context, index) => Padding(
+            padding: const EdgeInsets.only(right: 15),
+            child: Image.asset(imagesPaths[index])),
         scrollDirection: Axis.horizontal,
         itemCount: imagesPaths.length);
   }
